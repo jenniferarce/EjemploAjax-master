@@ -155,4 +155,12 @@ class cd
 	  	return "Metodo mostar:".$this->titulo."  ".$this->cantante."  ".$this->año;
 	}
 
+	public static function TraerEstadisticas()
+	{
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("select count(*) as cantidadCD, interpret as cantante from cds group by interpret order by cantidadCD desc limit 5");
+		$consulta->execute();			
+		return $consulta->fetchAll();		
+	}
+
 }

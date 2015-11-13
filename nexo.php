@@ -61,6 +61,9 @@ switch ($queHago) {
 		echo $retorno;
 		//include("php/validarUsuario.php");
 	break;
+	case 'MostrarEstadisticas':
+		include("partes/estadisticas.php");
+	break;
 	default:
 		# code...
 		break;
